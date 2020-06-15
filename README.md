@@ -1,6 +1,10 @@
-# GitGuardian Shield Github Action
+<img src="doc/logo.svg">
 
-Find exposed credentials in your commits.
+---
+
+# GitGuardian shield Github Action
+
+Find exposed credentials in your commits using [gg-shield](https://github.com/GitGuardian/gg-shield).
 
 ## Installation
 
@@ -19,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0 #fetch all history so multiple commits can be scanned
+          fetch-depth: 0 # fetch all history so multiple commits can be scanned
       - name: GitGuardian scan
         uses: GitGuardian/gg-shield-action@master
         env:
