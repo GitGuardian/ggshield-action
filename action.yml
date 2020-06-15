@@ -1,0 +1,13 @@
+name: "GitGuardian Shield Action"
+description: "Scan commits for secrets and other issues."
+branding:
+  icon: "shield"
+  color: "blue"
+runs:
+  using: "docker"
+  image: "gitguardian/gg-shield"
+  args:
+    - ggshield
+    - scan
+    - -v
+    - --mode=ci
