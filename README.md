@@ -2,13 +2,13 @@
 
 ---
 
-# GitGuardian shield Github Action
+# GitGuardian shield GitHub Action
 
 Find exposed credentials in your commits using [gg-shield](https://github.com/GitGuardian/gg-shield).
 
 ## Installation
 
-Add a new job to your Github workflow using the `GitGuardian/gg-shield-action` action.
+Add a new job to your GitHub workflow using the `GitGuardian/gg-shield-action` action.
 
 ```yaml
 name: GitGuardian scan
