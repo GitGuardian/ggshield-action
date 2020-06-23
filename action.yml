@@ -5,7 +5,7 @@ branding:
   color: "blue"
 runs:
   using: "docker"
-  image: "gitguardian/ggshield"
+  image: "docker://gitguardian/ggshield:latest"
   args:
     - ggshield
     - scan
