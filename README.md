@@ -2,9 +2,14 @@
 
 ---
 
-# GitGuardian shield GitHub Action
+# [GitGuardian Shield](https://github.com/GitGuardian/gg-shield) GitHub Action
 
-Find exposed credentials in your commits using [**gg-shield**](https://github.com/GitGuardian/gg-shield).
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-v1-undefined.svg?logo=github&logoColor=white&style=for-the-badge)](https://github.com/marketplace/actions/gitguardian-shield-action)
+[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/gitguardian/ggshield?color=1B2D55&sort=semver&style=for-the-badge&label=ggshield)](https://hub.docker.com/r/gitguardian/ggshield)
+[![License](https://img.shields.io/github/license/GitGuardian/gg-shield-action?color=%231B2D55&style=for-the-badge)](LICENSE)
+![GitHub stars](https://img.shields.io/github/stars/gitguardian/gg-shield-action?color=%231B2D55&style=for-the-badge)
+
+Find exposed credentials in your commits using [**GitGuardian shield**](https://github.com/GitGuardian/gg-shield).
 
 The **GitGuardian shield** (gg-shield) is a CLI application that runs in your local environment
 or in a CI environment to help you detect more than 200 types of secrets, as well as other potential security vulnerabilities or policy breaks.
