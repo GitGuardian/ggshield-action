@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#! /usr/bin/env bash
 
-args=($@)
+args=("$@")
 ggshield scan ${args[@]} ci

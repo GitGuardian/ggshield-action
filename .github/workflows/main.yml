@@ -4,13 +4,6 @@ name: Application Main
 on: push
 
 jobs:
-  lint:
-    name: Lint package
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: yaml-lint
-        uses: ibiqlik/action-yamllint@v1
   scanning:
     name: Test scan
     runs-on: ubuntu-latest
