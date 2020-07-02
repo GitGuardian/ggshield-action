@@ -1,9 +1,7 @@
-name: Application Main Branch
+name: Application Main
 
-on:
-  push:
-    branches:
-      - "*"
+# Trigger on push
+on: push
 
 jobs:
   lint:
