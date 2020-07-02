@@ -23,6 +23,8 @@ jobs:
           fetch-depth: 0
       - name: Scan commit with ggshield
         uses: ./ # local action compiles docker image and runs scan ci
+        with:
+          args: -v --all-policies
         env:
           GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
           GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
