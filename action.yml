@@ -9,4 +9,4 @@ runs:
   args:
     - ggshield
     - scan
-    - --mode=ci
+    - ci
