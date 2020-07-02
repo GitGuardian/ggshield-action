@@ -23,9 +23,6 @@ branding:
   color: "blue"
 runs:
   using: "docker"
-  image: "docker://gitguardian/ggshield:latest"
+  image: "Dockerfile"
   args:
-    - ggshield
-    - scan
     - ${{ inputs.args }}
-    - ci
