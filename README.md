@@ -48,6 +48,52 @@ jobs:
 
 Do not forget to add your [GitGuardian API Key](https://dashboard.gitguardian.com/api/v1/auth/user/github_login/authorize?utm_source=github&utm_medium=gg_shield&utm_campaign=shield1) to the `GITGUARDIAN_API_KEY` secret in your project settings.
 
+## Adding extra options to the action
+
+The following options can be added to the action by using action inputs:
+
+```
+Options:
+  --show-secrets  Show secrets in plaintext instead of hiding them.
+  --exit-zero     Always return a 0 (non-error) status code, even if issues
+                  are found.The env var GITGUARDIAN_EXIT_ZERO can also be used
+                  to set this option.
+
+  --all-policies  Present fails of all policies (Filenames, FileExtensions,
+                  Secret Detection).By default, only Secret Detection is
+                  shown.
+
+  -v, --verbose   Verbose display mode.
+```
+
+Example:
+
+```yaml
+name: GitGuardian scan
+
+on: [push, pull_request]
+
+jobs:
+  scanning:
+    name: GitGuardian scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # fetch all history so multiple commits can be scanned
+      - name: GitGuardian scan
+        uses: GitGuardian/gg-shield-action@master
+        with:
+          args: -v --all-policies
+        env:
+          GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
+          GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
+          GITHUB_PULL_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          GITHUB_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
+```
+
 # License
 
 **GitGuardian shield** is MIT licensed.
