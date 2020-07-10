@@ -103,7 +103,7 @@ jobs:
 
 ## Examples of GitGuardian scanning
 
-![Scan output example](https://cdn.jsdelivr.net/gh/gitguardian/gg-shield-action/doc/example_output.png)
+![Scan output example](https://cdn.statically.io/gh/GitGuardian/gg-shield-action/51c86f8a/doc/example_output.png)
 
 This a sample scan result from **GitGuardian shield**.
 
@@ -111,7 +111,7 @@ If the secret detected has been revoked and you do not wish to rewrite git histo
 
 An example configuration file is available [here](https://github.com/GitGuardian/gg-shield/blob/main/.gitguardian.example.yml).
 
-![Status example](https://cdn.jsdelivr.net/gh/gitguardian/gg-shield-action/doc/example_output.png)
+![Status example](https://cdn.statically.io/gh/GitGuardian/gg-shield-action/51c86f8a/doc/status.png)
 
 In case there are secret leaks or other security issues on your commit your workflow will be marked as failed.
 
