@@ -107,13 +107,13 @@ jobs:
 
 This a sample scan result from **GitGuardian shield**.
 
-If the secret detected has been revoked and you do not wish to rewrite git history, you can use a value of the policy break (for example: the value of `|_password_|`) or the ignore SHA displayed on your `.gitguardian.yaml` under `matches-ignore`.
+If the secret detected has been revoked and you do not wish to rewrite git history, you can use a value of the policy break (for example: the value of `|_password_|`) or the ignore SHA displayed in your `.gitguardian.yaml` under `matches-ignore`.
 
 An example configuration file is available [here](https://github.com/GitGuardian/gg-shield/blob/main/.gitguardian.example.yml).
 
 ![Status example](https://cdn.statically.io/gh/GitGuardian/gg-shield-action/51c86f8a/doc/status.png)
 
-In case there are secret leaks or other security issues on your commit your workflow will be marked as failed.
+If there are secret leaks or other security issues in your commit your workflow will be marked as failed.
 
 Be sure to add `GitGuardian scan` to your required status checks in your repository settings to stop pull requests with security issues from being merged.
 
