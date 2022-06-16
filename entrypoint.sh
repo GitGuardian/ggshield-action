@@ -1,4 +1,4 @@
 #! /usr/bin/env bash
 
 args=("$@")
-ggshield scan ${args[@]} ci
+ggshield secret scan ${args[@]} ci
