@@ -5,7 +5,7 @@ author: GitGuardian <support@gitguardian.com>
 inputs:
   args:
     description: |
-      Arguments to be passed to gg-shield scan
+      Arguments to be passed to ggshield secret scan
       Options:
         --show-secrets  Show secrets in plaintext instead of hiding them.
         --exit-zero     Always return a 0 (non-error) status code, even if issues
