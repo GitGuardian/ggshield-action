@@ -56,21 +56,7 @@ Do not forget to add your [GitGuardian API Key](https://dashboard.gitguardian.co
 
 ## Adding extra options to the action
 
-The following options can be added to the action by using action inputs:
-
-```
-Options:
-  --show-secrets  Show secrets in plaintext instead of hiding them.
-  --exit-zero     Always return a 0 (non-error) status code, even if issues
-                  are found.The env var GITGUARDIAN_EXIT_ZERO can also be used
-                  to set this option.
-
-  --all-policies  Present fails of all policies (Filenames, FileExtensions,
-                  Secret Detection).By default, only Secret Detection is
-                  shown.
-
-  -v, --verbose   Verbose display mode.
-```
+The action accepts the same extra options as the `ggshield secret scan ci` command. Here is the [command reference](https://docs.gitguardian.com/ggshield-docs/reference/secret/scan/ci).
 
 Example:
 
