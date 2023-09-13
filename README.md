@@ -77,7 +77,7 @@ jobs:
       - name: GitGuardian scan
         uses: GitGuardian/ggshield-action@v1.18.1
         with:
-          args: -v --all-policies
+          args: -v --ignore-known-secrets
         env:
           GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
           GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
