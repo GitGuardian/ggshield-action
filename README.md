@@ -40,15 +40,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # fetch all history so multiple commits can be scanned
       - name: GitGuardian scan
-        uses: GitGuardian/ggshield-action@v1.14.4
+        uses: GitGuardian/ggshield-action@v1.18.1
         env:
           GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
           GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
-          GITHUB_PULL_BASE_SHA: ${{ github.event.pull_request.base.sha }}
           GITHUB_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
 ```
@@ -57,21 +56,7 @@ Do not forget to add your [GitGuardian API Key](https://dashboard.gitguardian.co
 
 ## Adding extra options to the action
 
-The following options can be added to the action by using action inputs:
-
-```
-Options:
-  --show-secrets  Show secrets in plaintext instead of hiding them.
-  --exit-zero     Always return a 0 (non-error) status code, even if issues
-                  are found.The env var GITGUARDIAN_EXIT_ZERO can also be used
-                  to set this option.
-
-  --all-policies  Present fails of all policies (Filenames, FileExtensions,
-                  Secret Detection).By default, only Secret Detection is
-                  shown.
-
-  -v, --verbose   Verbose display mode.
-```
+The action accepts the same extra options as the `ggshield secret scan ci` command. Here is the [command reference](https://docs.gitguardian.com/ggshield-docs/reference/secret/scan/ci).
 
 Example:
 
@@ -86,17 +71,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # fetch all history so multiple commits can be scanned
       - name: GitGuardian scan
-        uses: GitGuardian/ggshield-action@v1.14.4
+        uses: GitGuardian/ggshield-action@v1.18.1
         with:
-          args: -v --all-policies
+          args: -v --ignore-known-secrets
         env:
           GITHUB_PUSH_BEFORE_SHA: ${{ github.event.before }}
           GITHUB_PUSH_BASE_SHA: ${{ github.event.base }}
-          GITHUB_PULL_BASE_SHA: ${{ github.event.pull_request.base.sha }}
           GITHUB_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
 ```
