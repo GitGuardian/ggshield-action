@@ -17,5 +17,5 @@ runs:
   image: "docker://gitguardian/ggshield:v1.28.0"
   entrypoint: "/bin/bash"
   args:
-    - c
+    - -c
     - ggshield secret scan --recursive ${{ inputs.args }} path .
