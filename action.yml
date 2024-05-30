@@ -15,6 +15,7 @@ branding:
 runs:
   using: "docker"
   image: "docker://gitguardian/ggshield:v1.28.0"
-  entrypoint: "/app/docker/actions-secret-entrypoint.sh"
+  entrypoint: "/bin/bash"
   args:
-    - ${{ inputs.args }}
+    - c
+    - ggshield secret scan --recursive ${{ inputs.args }} path .
