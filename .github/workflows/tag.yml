@@ -3,13 +3,14 @@ name: Application Release
 on:
   push:
     tags:
-      - "v*"
+      # Trigger workflow on push events for version tags (e.g. v1.28.0) but not for major version tag (e.g. v1)
+      - "v*.*"
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
