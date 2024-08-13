@@ -18,12 +18,8 @@ or in a CI environment to help you detect more than 400 types of secrets, as wel
 
 ## Requirements
 
-- Have an account on **GitGuardian**. [**Sign up now**](https://dashboard.gitguardian.com/api/v1/auth/user/github_login/authorize?utm_source=github&utm_medium=gg_shield&utm_campaign=shield1) if you haven't before!
-- Create an API key on the [API Section](https://dashboard.gitguardian.com/api) of your dashboard.
-
-### Project secrets
-
-- `GITGUARDIAN_API_KEY` **[Required]**: Necessary to authenticate to GitGuardian's API. You can set the `GITGUARDIAN_API_KEY` value in the "Secrets" page of your repository's settings. You can create your API Key [**here**](https://dashboard.gitguardian.com/api/v1/auth/user/github_login/authorize?utm_source=github&utm_medium=gg_shield&utm_campaign=shield1).
+- A GitGuardian account. [**Sign up now**](https://dashboard.gitguardian.com/api/v1/auth/user/github_login/authorize?utm_source=github&utm_medium=gg_shield&utm_campaign=shield1) if you haven't before!
+- A GitGuardian API Key. You can create your API Key [**here**](https://dashboard.gitguardian.com/api/v1/auth/user/github_login/authorize?utm_source=github&utm_medium=gg_shield&utm_campaign=shield1). The only required scope is `scan`.
 
 ## Usage
 
@@ -52,7 +48,7 @@ jobs:
           GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
 ```
 
-Do not forget to add your [GitGuardian API Key](https://dashboard.gitguardian.com/api/v1/auth/user/github_login/authorize?utm_source=github&utm_medium=gg_shield&utm_campaign=shield1) to the `GITGUARDIAN_API_KEY` secret in your project settings.
+Add your [GitGuardian API Key](https://dashboard.gitguardian.com/api/v1/auth/user/github_login/authorize?utm_source=github&utm_medium=gg_shield&utm_campaign=shield1) to the `GITGUARDIAN_API_KEY` secret in your project settings.
 
 ## Adding extra options to the action
 
