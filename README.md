@@ -34,6 +34,8 @@ jobs:
   scanning:
     name: GitGuardian scan
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -65,6 +67,8 @@ jobs:
   scanning:
     name: GitGuardian scan
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
