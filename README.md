@@ -1,7 +1,3 @@
-<a href="https://gitguardian.com/"><img src="https://cdn.jsdelivr.net/gh/gitguardian/ggshield-action/doc/logo.svg"></a>
-
----
-
 # [GitGuardian Shield](https://github.com/GitGuardian/ggshield) GitHub Action
 
 [![GitHub Marketplace](https://img.shields.io/badge/Marketplace-v1-undefined.svg?logo=github&logoColor=white&style=for-the-badge)](https://github.com/marketplace/actions/gitguardian-shield-action)
